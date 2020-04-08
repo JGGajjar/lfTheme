@@ -1,0 +1,214 @@
+.carousel-sec{
+
+    @include box-shadow(0px 3px 7px 0 rgba(get-cl(tc-1), 0.05));
+    @include border-radius(3px);
+    overflow: hidden;
+
+    .carousel__media-wrapper{
+
+        overflow: hidden;
+        
+        .bg-img{
+
+            width: 100%;
+            height: auto;
+            background-position: center;
+            background-size: cover;
+
+            img{
+                width: 100%;
+            }
+
+        } /* .bg-img End */
+
+    } /* .carousel__media-wrapper End */
+
+    &.carousel-sec-one{
+
+        .bg-img{
+
+            height: 300px;
+
+        } /* .bg-img End */
+
+    } /* carousel-sec-one end */
+
+    .carousel__caption-wrapper{
+
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+
+    } /* .carousel__caption-wrapper End */
+
+    .carousel__pagination-bullets{
+
+        width: auto;
+        top: 16px;
+        bottom: inherit;
+        left: 16px;
+
+        .swiper-pagination-bullet{
+
+            @include opacity(1);
+            width: 10px;
+            height: 10px;
+            background: transparent;
+            border: solid 2px get-cl(tc-6);
+
+            &:hover{
+                @include opacity(0.5);
+            }
+
+        } /* .swiper-pagination-bullet End */
+
+        .swiper-pagination-bullet-active{
+
+            @include opacity(1);
+            background: get-cl(tc-6);
+
+            &:hover{
+                @include opacity(1);
+            }
+
+        } /* .swiper-pagination-bullet-active End */
+
+    } /* .carousel__bullets End */
+
+    .carousel__button{
+
+        width: 16px;
+        height: 16px;
+        background: get-cl(pc-1);
+        color: get-cl(tc-6);
+        margin-top: -8px;
+        @include border-radius(50%);
+        font-size: 8px;
+        text-align: center;
+        line-height: 16px;
+        vertical-align: middle;
+
+        &:hover{
+
+            background: get-cl(sc-1);
+            color: get-cl(tc-1);
+
+        }
+
+        &:before{
+
+            position: absolute;
+            left: 0;
+            top: 0;
+            margin-left: 0;
+            margin-top: 0;
+            width: 16px;
+            height: 16px;
+            text-align: center;
+
+        }
+
+        &.carousel__button-prev:before{
+
+            margin-left: -1px;
+
+        } /* carousel__button-prev:before */
+
+        &.carousel__button-next:before{
+
+            margin-left: 1px;
+
+        } /* carousel__button-next:before end */
+        
+    }/* carousel__button end */
+
+    &.carousel-sec-three{
+
+        @include box-shadow(none);
+        position: relative;
+        overflow: inherit;
+
+        .carousel__button{
+            top: -36px;
+            @extend .cl-tc-2;
+            background: transparent;
+            font-size: get-fs(fs-12);
+            @include opacity(0.85);
+
+            &.carousel__button-next{
+                right: 0;
+            } /* carousel__button-next end */
+
+            &.carousel__button-prev{
+                right: 24px;
+                left: inherit;
+            } /* carousel__button-prev end */
+
+            &:hover{
+                @include opacity(1);
+            }
+
+            &.swiper-button-disabled{
+                @include opacity(0.25);
+                cursor: auto;
+                pointer-events: none;
+
+                &:hover{
+                    @include opacity(0.25);
+                    cursor: auto;
+                    pointer-events: none;
+                }
+            } /* swiper-button-disabled end */
+
+        } /* carousel__button end */        
+
+    } /* carousel-sec-three end */
+
+} /* .carousel-sec End */
+
+/*------------------------------------------
+    Mobile
+--------------------------------------------*/
+@media (max-width: 767px){
+
+    .carousel-sec{
+
+        &.carousel-sec-one{
+
+            .carousel__media-wrapper{
+
+                .bg-img{
+        
+                    height: 200px;
+
+                } /* .bg-img End */
+
+            } /* .carousel__media-wrapper End */
+        
+            .carousel__caption-wrapper{
+        
+                position: relative;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+
+                .card{
+                    
+                    padding: 15px 20px;
+
+                    &.card--bgblue{
+
+                        background: get-cl(pc-1);
+
+                    } /* .card--bgblue End */
+
+                } /* .card End */
+        
+            } /* .carousel__caption-wrapper End */
+
+        } /* carousel-sec-one end */
+
+    } /* .carousel-sec End */
+
+}

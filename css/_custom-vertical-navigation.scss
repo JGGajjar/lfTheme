@@ -1,0 +1,46 @@
+.navbar-vertical{
+
+    @include box-shadow(0px 3px 7px 0 rgba(get-cl(tc-1), 0.05));
+    @extend .bg-tc-6;
+    @include border-radius(3px);
+    @extend .mg-bottom-sp-0;
+    border: 1px solid get-cl(sc-5);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    > li{
+
+        > a{
+
+            padding: 15px;
+            @extend .cl-pc-1;
+            @extend .fs-14-ff-op-rg;
+            display: block;
+            border-bottom: 1px solid get-cl(sc-5);
+
+            &:hover, &:focus, &.active{
+                text-decoration: none;
+                @extend .cl-pc-1;
+                @extend .bg-sc-1;
+
+            }/* &:hover, &:focus End */
+            
+        } /* > a end */
+
+        &.active a{
+            text-decoration: none;
+            @extend .cl-pc-1;
+            @extend .bg-sc-1;
+
+        }/* &:hover, &:focus End */
+
+        &:last-child a{
+
+            border-bottom: 0;
+
+        } /* &:last-child a end */
+        
+    } /* > li end */
+
+} /* navbar-vertical end */

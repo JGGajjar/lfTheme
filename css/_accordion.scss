@@ -1,0 +1,65 @@
+.accordion-panel-sec{
+
+    .panel{
+        @include box-shadow(0px 3px 7px 0 rgba(get-cl(tc-1), 0.05));
+        @extend .bg-tc-6;
+        @include border-radius(3px);
+        @extend .mg-bottom-sp-0;
+        border-color: get-cl(sc-5);
+        
+        .panel-heading{
+            background: transparent;
+            border: none;
+            
+            > .panel-title{
+                
+                a{
+
+                    padding: 12px 20px;
+                    @extend .cl-pc-1;
+                    text-decoration: none;
+                    @extend .fs-15-ff-op-bo;
+
+                    &:hover{
+
+                        @extend .cl-tc-1;
+                        text-decoration: none;
+
+                    } /* &:hover, &:focus end */
+
+                    &.collapsed{
+
+                        @extend .cl-tc-2;
+
+                        &:hover{
+
+                            @extend .cl-tc-1;
+                            text-decoration: none;
+    
+                        } /* &:hover, &:focus end */
+
+                    } /* &.collapsed end */
+
+                } /* a end */                
+                
+            }/* > .panel-title End */
+            
+        }/* .panel-heading End */
+        
+        .panel-body{
+            
+            @extend .pd-top-sp-15;
+            @extend .pd-bottom-sp-15;
+            @extend .pd-left-sp-20;
+            @extend .pd-right-sp-20;
+            border-top: 2px solid get-cl(sc-1);
+            
+            :last-child{
+                @extend .mg-bottom-sp-0;
+            }
+            
+        }/* .panel-body End */
+        
+    }/* .panel End */
+
+} /* accordion-sec end */

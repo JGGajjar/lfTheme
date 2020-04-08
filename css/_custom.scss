@@ -1,0 +1,77 @@
+/* These inject tags are used for dynamically creating imports for themelet styles, you can place them where ever you like in this file. */
+
+/* inject:imports */
+
+@import "font"; /* @font-face defination */
+
+@import "custom-function"; /* Define custom function */
+
+@import "custom-mixin"; /* Define custom mixin */
+
+@import "custom-variable"; /* Custom variable and map configuration */
+
+/*------------------------------------------------------------
+    Root start
+--------------------------------------------------------------*/
+
+#{$custom_html_css_class} {
+  @import "global"; /* Global element css */
+
+  #wrapper {
+    @import "vendor"; /* Carousel css */
+
+    @import "icon-font"; /* Icon Fonts element css */
+
+    @import "custom-layout"; /* Layout element css */
+
+    @import "typography"; /* Typography element css */
+
+    @import "header"; /* Header element css */
+
+    @import "notification"; /* Notification css */
+
+    @import "breadcrum"; /* Breadcrum css */
+
+    @import "custom-navigation"; /* Navigation element css */
+
+    @import "custom-vertical-navigation"; /* Navigation element css */
+
+    @import "footer"; /* Footer element css */
+
+    @import "button"; /* Button element css */
+
+    @import "formelement"; /* Form element css */
+
+    @import "list"; /* List element css */
+
+    @import "panel"; /* Panel element css */
+
+    @import "accordion"; /* Accordion element css */
+
+    @import "card"; /* Card element css */
+
+    @import "carousel"; /* Carousel css */
+
+    @import "birthday"; /* birthday css */
+
+    @import "searchcontainer"; /* search container css */
+
+    @import "table"; /* table css */
+
+    @import "badge"; /* badge css */
+
+    @import "scrollbar-custom"; /* Custom M scrollbar css */
+
+    @import "tabs"; /* tab element css */
+
+    @import "popover"; /* popover element css */
+
+    @import "popup"; /* popover element css */
+
+    @import "lexicon"; /* lexicon theme component css - Keep it at end */
+  } /* #wrapper End */
+} /* .pm End */
+
+/* endinject */
+
+/* This file allows you to override default styles in one central location for easier upgrade and maintenance. */

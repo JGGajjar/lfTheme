@@ -1,0 +1,17 @@
+%blue{
+    background: rgba(get-cl(pc-1),0.6);
+    color: get-cl(tc-6);
+}
+
+.card{
+    padding: 10px 20px;
+    border: 0 none;
+    margin: 0;
+    @include box-shadow(0px 3px 7px 0 rgba(get-cl(tc-1), 0.05));
+    @include border-radius(0);
+
+    &--bgblue{
+        @extend %blue;
+    }
+
+}

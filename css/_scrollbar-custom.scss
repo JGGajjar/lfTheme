@@ -1,0 +1,52 @@
+.custom-m-scrollbar{
+
+    .mCustomScrollBox{
+
+        .mCSB_container{
+
+            margin-right: 20px;
+
+        } /* .mCSB_container end */
+
+        .mCSB_scrollTools{
+
+            //@include opacity(1);
+        
+            .mCSB_draggerContainer{
+
+                .mCSB_dragger{
+
+                    .mCSB_dragger_bar{
+
+                        @include border-radius(2.5px);
+                        width: 5px;
+                        background: get-cl(tc-4);
+
+                    } /* .mCSB_dragger_bar end */
+
+                    
+
+                } /* .mCSB_dragger end */
+
+                .mCSB_draggerRail{
+
+                    background: get-cl(tc-4);
+                    @include opacity(0.5);
+                    @include border-radius(0.5px);
+                    width:1px;
+
+                } /* .mCSB_draggerRail end */
+
+            } /* .mCSB_draggerContainer end */
+
+        } /* .mCSB_scrollTools end */
+
+    } /* .mCustomScrollBox end */
+
+    &.panel-body, &.panel-sec__ft-body{
+
+        padding-right: 5px;
+
+    } /* &.panel-body, &.panel-sec__ft-body end */
+
+} /* .custom-m-scrollbar end */

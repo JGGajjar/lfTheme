@@ -1,0 +1,281 @@
+@import "vendor/datepiker"; /* Datepiker css */
+
+body {
+  @include _pm-body-level($_pm-body-cofig-map);
+
+  &.hide_docbar {
+    #ControlMenu,
+    .lfr-product-menu-panel.sidenav-fixed.sidenav-menu-slider {
+      display: none;
+    } /* #ControlMenu, .lfr-product-menu-panel.sidenav-fixed.sidenav-menu-slider End */
+
+    &.open #wrapper {
+      padding-left: 0px;
+    } /* &.open #wrapper End */
+
+    &.has-control-menu #wrapper {
+      margin-top: 0;
+    } /* &.has-control-menu #wrapper End */
+  } /* &.hide_docbar End */
+
+  /*------------------------------------------------------------
+		Custom Dropdown Menu
+	--------------------------------------------------------------*/
+  .dropdown-menu {
+    //width: 100%;
+    margin: 0;
+    padding: 0 0 0 0;
+    @include border-radius(3px);
+    border: 1px solid get-cl(tc-4);
+    //border-bottom: 5px solid get-cl(pc-3);
+    @include box-shadow(0px 3px 7px 0 rgba(get-cl(tc-1), 0.1));
+
+    ul {
+      margin: 0;
+      padding: 0 0 0 0;
+      border: 0;
+    }
+
+    li {
+      padding: 0;
+
+      a {
+        padding: 6px 10px;
+        color: get-cl(tc-1);
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+          color: get-cl(pc-1);
+          background: get-cl(sc-5);
+          text-decoration: none;
+        } /* &:hover, &:focus end */
+      } /* a */
+
+      &.active {
+        a,
+        a:hover,
+        a:focus {
+          color: get-cl(pc-1);
+          background: get-cl(sc-5);
+          text-decoration: none;
+        }
+      }
+    } /* li end */
+
+    li.selected a span.check-mark {
+      margin-top: 7px !important;
+    } /* li.selected a span.check-mark end */
+  } /* .dropdown-menu end */
+
+  .lfr-icon-menu-open .dropdown-menu a img {
+    display: none;
+  } /* .lfr-icon-menu-open .dropdown-menu a img end */
+} /* body End*/
+
+#wrapper {
+  padding-top: 0;
+
+  #main-content {
+    padding-top: 30px;
+    //padding-bottom: 30px;
+  } /* #main-content End */
+
+  /* Generate transition for all DOM level */
+  * {
+    @include transition(all 100ms ease-out);
+  }
+
+  /* Generate font-size calsses */
+  @include _pm-font-size-level($font-size-config);
+
+  /* Generate Heading, Paragraph and link font calsses */
+  @include _pm-heading-para-link-font-size-level($heading-para-link-font-config);
+
+  /* Generate background and color classes */
+  @include _pm-bg-cl-level($color-palette-config);
+
+  /* Generate margin and padding calsses */
+  @include _pm-margin-padding-level($spacing-config);
+
+  /* Generate button calsses */
+  @include _pm-button-cl-level($button-config);
+
+  /* Generate form elements extend */
+  @include _pm-form-label-level($form-elements-config__label-config, $form-elements-config__ff-config);
+
+  /* Generate form control extend */
+  @include _pm-form-control-level($form-elements-config__form-control-config, $form-elements-config__ff-config);
+
+  /* Generate badge calsses */
+  @include _pm-badge-cl-level($badge-config);
+
+  .clearfix {
+    &:before,
+    &:after {
+      content: " ";
+      display: table;
+    } /* &:before, &:after End */
+
+    &:after {
+      clear: both;
+    } /* &:after End */
+  } /* .clearfix End */
+
+  .h-middle {
+    > [class*="col-"] {
+      float: none;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  } /* .h-middle End */
+
+  .anchor-icon-right-link {
+    a {
+      color: get-cl(pc-1);
+    } /* a end */
+
+    .kaicon {
+      font-size: get-fs(fs-11);
+
+      &:before {
+        color: get-cl(pc-1);
+      } /* :before end */
+    } /* kaicon end */
+  } /* anchor-icon-right-link end */
+
+  .anchor-hover-no-underline {
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  } /* .anchor-hover-no-underline end */
+
+  .anchor-hover-tc-1 {
+    &:hover,
+    &:focus {
+      color: get-cl(tc-1);
+    }
+  } /* .anchor-hover-tc-1 end */
+
+  .radius__df {
+    @include border-radius(3px);
+  } /* radius__df end */
+
+  .radius__full {
+    @include border-radius(100%);
+  } /* radius__full end */
+
+  .shadow__df {
+    @include box-shadow(0px 3px 7px 0 rgba(get-cl(tc-1), 0.1));
+  } /* shadow__df end */
+
+  ul {
+    &.list-style-none {
+      li {
+        list-style: none;
+        padding: 0;
+
+        &:before {
+          display: none;
+        } /* &:before ENd */
+      } /* li End */
+    } /* &.list-style-none End */
+  } /* ul End */
+
+  .bo-tb-5h-dt {
+    margin: 10px 0;
+    height: 4px;
+    border-top: 1px dotted get-cl(sc-5);
+    border-bottom: 1px dotted get-cl(sc-5);
+  } /* .bo-t-5h-b End */
+
+  .bo-l-1w-s {
+    border-top: 0 none;
+    border-right: 0 none;
+    border-bottom: 0 none;
+    border-left: 1px solid get-cl(sc-5);
+  } /* .bo-t-5h-b End */
+
+  .panel-fix-height {
+    height: 301px;
+
+    .panel-body {
+      height: 258px; // 301 - 41(header) = 260
+      overflow-y: auto;
+      overflow-x: hidden;
+    } /* .panel-body end */
+
+    &-with-footer {
+      height: 301px;
+
+      .panel-body {
+        height: 194px; // 301 - 41(header) - 64(footer) = 196
+        overflow-y: auto;
+        overflow-x: hidden;
+      } /* .panel-body end */
+    } /* .panel-fix-height-with-footer */
+  } /* .panel-fix-height end */
+
+  .whats-new-home-panel {
+    .panel-sec__ft-body {
+      height: 168px;
+      overflow-y: auto;
+      overflow-x: hidden;
+    } /* .panel-body end */
+  }
+
+  .row-eq-height {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    .content {
+      height: 100%;
+
+      &.image-responsive {
+        background-position: left top;
+        background-size: cover;
+        height: 124px;
+        width: 170px;
+        text-align: right;
+      } /* &.image-responsive end */
+    } /* .content end */
+  } /* row-eq-height end */
+
+  .chead-sec {
+    &__disc {
+      width: calc(100% - 90px);
+    } /* .chead-sec__disc end */
+  } /* .chead-sec end */
+
+  .break-word {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+  } /* .break-word end */
+} /* #wrapper End */
+
+@media (max-width: 767px) {
+  #wrapper {
+    .row-eq-height {
+      display: block;
+
+      > [class*="col-"] + [class*="col-"],
+      .content.image-responsive {
+        margin-top: 15px;
+      }
+    } /* row-eq-height end */
+
+    .chead-sec {
+      &__col + .chead-sec__col {
+        margin-top: 15px;
+      } /* &__col + .chead-sec__col end */
+    } /* .chead-sec end */
+  } /* #wrapper End */
+}

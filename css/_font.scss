@@ -1,0 +1,46 @@
+@font-face {
+  font-family: "open_sansregular";
+  src: url("fonts/web/opensans-regular-webfont.woff2") format("woff2"),
+    url("fonts/web/opensans-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  line-height: normal;
+}
+
+@font-face {
+  font-family: "open_sanslight";
+  src: url("fonts/web/opensans-light-webfont.woff2") format("woff2"),
+    url("fonts/web/opensans-light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  line-height: normal;
+}
+
+@font-face {
+  font-family: "open_sanssemibold";
+  src: url("fonts/web/opensans-semibold-webfont.woff2") format("woff2"),
+    url("fonts/web/opensans-semibold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  line-height: normal;
+}
+
+@font-face {
+  font-family: "open_sansbold";
+  src: url("fonts/web/opensans-bold-webfont.woff2") format("woff2"),
+    url("fonts/web/opensans-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  line-height: normal;
+}
+
+/* Icon font */
+@font-face {
+  font-family: "icomoon";
+  src: url("fonts/icon/icomoon.eot?uvmcdw");
+  src: url("fonts/icon/icomoon.eot?uvmcdw#iefix") format("embedded-opentype"),
+    url("fonts/icon/icomoon.ttf?uvmcdw") format("truetype"), url("fonts/icon/icomoon.woff?uvmcdw") format("woff"),
+    url("fonts/icon/icomoon.svg?uvmcdw#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}

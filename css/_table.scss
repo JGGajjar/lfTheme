@@ -1,0 +1,146 @@
+.table{
+
+    border: 0;
+
+    > thead.table-columns, > thead{
+        
+        > tr{
+
+            border: 0;
+        
+            > th{
+                
+                background: get-cl(sc-5);
+                padding: 10px;
+                color: get-cl(pc-1);
+                @extend .fs-14-ff-ar;
+                border: 0;
+
+            } /* > th end */
+
+        } /* > tr end */
+
+        &.thead-light{
+
+            > tr{
+
+                > th{
+
+                    background: get-cl(sc-6);
+                
+                } /* > th end */
+
+            } /* > tr end */
+
+        } /* &.light-head end */
+
+    } /* > thead.table-columns end */
+
+    > tbody.table-data, > tbody{
+
+        > tr{
+
+            background: transparent;
+            border-bottom: 1px solid get-cl(sc-5);
+            height: auto;
+
+            &:first-child{
+
+                border-top: 1px solid get-cl(sc-5);
+
+            } /* &:first-child end */
+
+            > td, > th{
+
+                border: 0;
+                padding: 10px;
+                background: transparent;
+                @extend .fs-12-ff-ar;
+                @include box-shadow(none);
+
+            } /* > td, > th end */
+
+            > th{
+
+                color: get-cl(pc-1);
+
+            } /* > th end */
+
+            &.active > td, > th{
+                background: get-cl(tc-5);
+                @include box-shadow(none);
+            }
+
+        }
+
+    } /* > tbody.table-data end */
+
+    > tfoot.table-foot, > tfoot{
+
+        > tr{
+
+            background: transparent;
+            //border-bottom: 1px solid get-cl(sc-5);
+
+            > td, > th{
+
+                border: 0;
+                padding: 10px;
+                background: transparent;
+                @extend .fs-12-ff-ar;
+                
+            } /* > td, > th end */
+
+            > th{
+
+                //color: get-cl(pc-1);
+
+            } /* > th end */
+
+        }
+
+    } /* > tfoot.table-foot end */
+
+    &.table-striped{
+
+        > tbody.table-data > tr:nth-of-type(even),
+        > tbody > tr:nth-of-type(even)
+        {
+
+            background: get-cl(sc-6);
+
+        }
+
+    } /* &.table-striped end */
+
+    &.table-bordered{
+
+        > thead.table-columns > tr > td,
+        > thead.table-columns > tr > th,
+        > tbody.table-data > tr > td,
+        > tbody.table-data > tr > th,
+        > tfoot.table-foot > tr > td,
+        > tfoot.table-foot > tr > th,
+        > thead > tr > td,
+        > thead > tr > th,
+        > tbody > tr > td,
+        > tbody > tr > th,
+        > tfoot > tr > td,
+        > tfoot > tr > th
+        {
+            border: 1px solid get-cl(sc-5);
+        }
+
+    } /* &.table-bordered end */
+
+    &.table-hover{
+
+        > tbody.table-data > tr:hover,
+        > tbody > tr:hover
+        {
+            background: get-cl(tc-5);
+        }
+
+    }
+
+} /* table end */

@@ -1,0 +1,93 @@
+/* Nested map value get */
+
+@function map-deep-get($map, $keys...) {
+	
+    @each $key in $keys {
+    
+        $map: map-get($map, $key);
+        
+    }
+    
+    @return $map;
+    
+}
+
+/* Dynamic font map genrate */
+
+@function font-map-genrator($config){
+	
+	$font-prifix-map:();
+	
+	@for $i from map-get($config, start-font-size) through map-get($config, end-font-size){
+	
+	  $font-prifix-map: map-merge($font-prifix-map, (#{map-get($config, class-prifix)}#{$i}:#{$i}));
+	  
+	}
+	
+	@return $font-prifix-map;
+	
+}
+
+/* Dynamic color map genrate */
+
+@function color-map-genrator($config){
+	
+	$color-prifix-map:();
+	
+	@each $key, $value in $config{
+	
+		$prifix: map-deep-get($config, $key, class-prifix);
+		
+		$cl-value: map-deep-get($config, $key, color-value);
+		
+		@for $i from 1 through length($cl-value){
+		
+		  $color-prifix-map: map-merge($color-prifix-map, (#{$prifix}#{$i}:nth($cl-value, $i)));
+		  
+		}
+		
+	}
+	
+	@return $color-prifix-map;
+	
+}
+
+/* Get Theme configuration MAP theme-config*/
+
+@function get-component-config($key){
+	
+	@return map-get($theme-config,$key);
+	
+}
+
+/* Genrate value with 'px' */
+
+@function get-px($val) {
+	
+  @return unquote($val+'px');
+  
+}
+
+/* Genrate Icon Font unicode */
+
+@function get-if-unicode($str) {
+	
+  @return unquote("\"") + $str + unquote("\"");
+  
+}
+
+/* Get Color form color-palette-config */
+
+@function get-cl($key){
+	
+	@return map-get($color-palette-config,$key);
+	
+}
+
+/* Get Font size form font-size-config */
+
+@function get-fs($key){
+	
+	@return map-get($font-size-config,$key)+"px";
+	
+}

@@ -1,0 +1,37 @@
+.customPopup{
+	.modal-header{
+		border-bottom: 3px solid get-cl(sc-1);
+	}
+	.modal-dialog {
+	    position: relative;
+	}
+	.form-group{
+		select.form-control{
+			background-color: get-cl(tc-6);
+		} 
+	}
+	
+	.form-group {
+		.select2 {
+			width: 100% !important;
+		}
+		span.select2-selection.select2-selection--multiple {
+			font-family: Arial;
+			font-weight: 400;
+			font-size: 13px;
+			color: #000000;
+			border-radius: 3px;
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			-o-border-radius: 3px;
+			border-width: 1px;
+			border-style: solid;
+			border-color: #ccd9e9 !important;
+			background-color: #ffffff;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+			padding: 2px 6px;
+		}
+	}
+
+}

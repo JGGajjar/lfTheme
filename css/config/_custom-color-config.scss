@@ -1,0 +1,11 @@
+/*--------------------------------------------------
+    Color palette Map and Configuration
+----------------------------------------------------*/
+/*	
+ *	color-map-genrator O/P
+ *	pc-1: #280071, pc-2: #190046, pc-3: #00a9e0, pc-4: #0092c1, 
+ *	sc-1: #ffd100, sc-2: #d9b200, sc-3: #e5f6fc, sc-4: #c2e3ee, sc-5: #ccd9e9, sc-6: #f1f6fc, sc-7: #ff7043, sc-8: #8ec351, 
+ *	tc-1: #000000, tc-2: #7f7f7f, tc-3: #b2b2b2, tc-4: #dadbda, tc-5: #f5f5f5, tc-6: #ffffff, 
+ *	sp-1: #ff7043, sp-2: #8ec351
+ */
+$color-palette-config: color-map-genrator(get-component-config(theme-config__color-palette-config));

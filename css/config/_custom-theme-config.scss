@@ -1,0 +1,375 @@
+/** 
+  ---------------------------------------------
+    Theme config: $theme-config-map
+  --------------------------------------------
+*/
+
+$theme-config-map: (
+  /** 
+    -------------------------------------------
+      1.  Set theme Global class definition
+    --------------------------------------------
+  */
+    theme-config-map__class-name-map: ".pm",
+  /** 
+    --------------------------------------------------------------------------------------
+      2.  Set theme color definition 
+         theme-config-map__color-palette-map - Color map 
+          primary - Set value for primary color definition 
+           secondary - Set value for secondary color definition 
+           tertiary - Set value for tertiary color defiantion
+           special - Set value for any special color definition 
+     
+         For primary, secondary, tertiary & special color below two properties 
+           class-prifix - For prifix color class string (Like for primary color access by 
+                          ".pc-" so "pc-" string to identify primary color class)             
+                          class-prifix: pc-,
+           
+           color-value - Define respected color map like 
+                         color-value: (
+                                         #280071,
+                                         #190046,
+                                         #00a9e0,
+                                         #0092c1,
+                                       )
+   -------------------------------------------------------------------------------------- 
+  */
+    theme-config-map__color-palette-map:
+    (
+      primary: (
+        class-prifix: pc-,
+        color-value: (
+          #280071,
+          #190046,
+          #00a9e0,
+          #0092c1,
+        ),
+      ),
+      secondary: (
+        class-prifix: sc-,
+        color-value: (
+          #ffd100,
+          #d9b200,
+          #e5f6fc,
+          #c2e3ee,
+          #ccd9e9,
+          #f1f6fc,
+          #ff7043,
+          #8ec351,
+        ),
+      ),
+      tertiary: (
+        class-prifix: tc-,
+        color-value: (
+          #000000,
+          #7f7f7f,
+          #b2b2b2,
+          #dadbda,
+          #f5f5f5,
+          #ffffff,
+        ),
+      ),
+      special: (
+        class-prifix: sp-,
+        color-value: (
+          #ff7043,
+          #8ec351,
+          #b71616,
+          #049500,
+        ),
+      ),
+    ),
+  /** 
+    ------------------------------------------------------------------------------------------
+      3.  Font config:
+            theme-config-map__font-map__font-family-map
+              ff-opensans-regular - Set regular font family name
+              ff-opensans-light - Set light font family name
+              ff-opensans-bold - Set bold font family name
+              ff-opensans-semibold - Set semi bold font family name
+              ff-arial: Arial, - Default font family name
+            
+            theme-config-map__font-map__font-size-map
+              class-prifix: fs-, --- Set class prifix get specific font size( Like ".fs-8" for get font size 8px)
+              start-font-size: 8, --- Set minimum font size
+              end-font-size: 30, --- Set maximum font size
+    -----------------------------------------------------------------------------------------
+  */
+    theme-config-map__font-map:
+    (
+      theme-config-map__font-map__font-family-map: (
+        ff-opensans-regular: "open_sansregular",
+        ff-opensans-light: "open_sanslight",
+        ff-opensans-bold: "open_sansbold",
+        ff-opensans-semibold: "open_sanssemibold",
+        ff-arial: Arial,
+      ),
+      theme-config-map__font-map__font-size-map: (
+        class-prifix: fs-,
+        start-font-size: 8,
+        end-font-size: 30,
+      ),
+    ),
+  /** 
+    ------------------------------------------------------------------------------------------
+      3.  Global spacing (Margin & Padding) config & based on configuration get below classes
+            .mg-sp-0 -- For margin: 0 for all side
+            .mg-top-sp-0 -- For margin-top: 0
+            .mg-right-sp-0 -- For margin-right: 0
+            .mg-bottom-sp-0 -- For margin-bottom: 0
+            .mg-left-sp-0 -- For margin-left: 0 
+    ------------------------------------------------------------------------------------------
+  */
+    theme-config-map__spacing-map:
+    (
+      class-prefix: (
+        margin: mg-,
+        padding: pd-,
+      ),
+      class-direction: (
+        all,
+        top,
+        right,
+        bottom,
+        left,
+      ),
+      spcing-min: 0,
+      spacing-dif: 5,
+      spcing-max: 40,
+    ),
+  /** 
+    ------------------------------------------------------------------------------------------
+      4.  Button configuration:
+    ------------------------------------------------------------------------------------------
+  */
+    theme-config-map__button-map:
+    (
+      primary: (
+        class-prifix: btn-primary-pc-,
+        color-value-group: (
+          gp1: (
+            normal-state: (
+              txt-cl: #ffffff,
+              bg-cl: #280071,
+              br-cl: #280071,
+            ),
+            hover-state: (
+              txt-cl: #ffffff,
+              bg-cl: #190046,
+              br-cl: #190046,
+            ),
+            disable-state: (
+              txt-cl: #b2b2b2,
+              bg-cl: #f5f5f5,
+              br-cl: #b2b2b2,
+            ),
+          ),
+          gp2: (
+            normal-state: (
+              txt-cl: #ffffff,
+              bg-cl: #00a9e0,
+              br-cl: #00a9e0,
+            ),
+            hover-state: (
+              txt-cl: #ffffff,
+              bg-cl: #0092c1,
+              br-cl: #0092c1,
+            ),
+            disable-state: (
+              txt-cl: #b2b2b2,
+              bg-cl: #f5f5f5,
+              br-cl: #b2b2b2,
+            ),
+          ),
+        ),
+      ),
+      secondary: (
+        class-prifix: btn-secondary-sc-,
+        color-value-group: (
+          gp1: (
+            normal-state: (
+              txt-cl: #000000,
+              bg-cl: #ffd100,
+              br-cl: #ffd100,
+            ),
+            hover-state: (
+              txt-cl: #000000,
+              bg-cl: #d9b200,
+              br-cl: #d9b200,
+            ),
+            disable-state: (
+              txt-cl: #b2b2b2,
+              bg-cl: #f5f5f5,
+              br-cl: #b2b2b2,
+            ),
+          ),
+          gp2: (
+            normal-state: (
+              txt-cl: #000000,
+              bg-cl: #e5f6fc,
+              br-cl: #e5f6fc,
+            ),
+            hover-state: (
+              txt-cl: #000000,
+              bg-cl: #c2e3ee,
+              br-cl: #c2e3ee,
+            ),
+            disable-state: (
+              txt-cl: #b2b2b2,
+              bg-cl: #f5f5f5,
+              br-cl: #b2b2b2,
+            ),
+          ),
+          gp3: (
+            normal-state: (
+              txt-cl: #818181,
+              bg-cl: #ffffff,
+              br-cl: #ccd9e9,
+            ),
+            hover-state: (
+              txt-cl: #818181,
+              bg-cl: #f1f6fc,
+              br-cl: #ccd9e9,
+            ),
+            disable-state: (
+              txt-cl: #b2b2b2,
+              bg-cl: #f5f5f5,
+              br-cl: #b2b2b2,
+            ),
+          ),
+          gp4: (
+            normal-state: (
+              txt-cl: #280071,
+              bg-cl: #ccd9e9,
+              br-cl: #ccd9e9,
+            ),
+            hover-state: (
+              txt-cl: #280071,
+              bg-cl: #c2e3ee,
+              br-cl: #c2e3ee,
+            ),
+            disable-state: (
+              txt-cl: #b2b2b2,
+              bg-cl: #f5f5f5,
+              br-cl: #b2b2b2,
+            ),
+          ),
+        ),
+      ),
+    ),
+  /** 
+    ------------------------------------------------------------------------------------------
+      5.  Icon font configuration:
+    ------------------------------------------------------------------------------------------
+  */
+    theme-config-map__icon-font-map:
+    (
+      kaicon-minus: \e918,
+      kaicon-mobile-menu: \e919,
+      kaicon-arrow-big-down: \e914,
+      kaicon-arrow-big-left: \e915,
+      kaicon-arrow-big-right: \e916,
+      kaicon-arrow-big-top: \e917,
+      kaicon-add: \e900,
+      kaicon-arrow-down: \e901,
+      kaicon-arrow-left: \e902,
+      kaicon-arrow-right: \e903,
+      kaicon-arrow-up: \e904,
+      kaicon-calendar: \e905,
+      kaicon-close-big: \e906,
+      kaicon-close: \e907,
+      kaicon-complaints: \e908,
+      kaicon-deposits: \e909,
+      kaicon-download: \e90a,
+      kaicon-executive-desk: \e90b,
+      kaicon-info: \e90c,
+      kaicon-loans: \e90d,
+      kaicon-more-menu: \e90e,
+      kaicon-pdf: \e90f,
+      kaicon-profit-loss: \e910,
+      kaicon-view: \e911,
+      kaicon-whats-new: \e912,
+      kaicon-xlsx: \e913,
+    ),
+  /** 
+    -----------------------------------------------------------------------------------------------------------
+      6.  Form Element configuration "theme-config-map__form-elements-map"
+            theme-config-map__form-elements-map__ff-map -- Set font family name
+            theme-config-map__form-elements-map__label-map -- Set form label styles
+              fw: 400, -- Set font weight for label
+              fs: 12, -- Set font size for label
+              cl: #7f7f7f, -- Set font color for label
+            theme-config-map__form-elements-map__form-control-map -- Set styling for Bootstrap form control 
+              fw: 400, -- Set for font weight 
+              fs: 13, -- Set for font size 
+              cl: #000000,  -- Set for font color 
+              bo-rd: 3,  -- Set for border radius 
+              bo-wi: 1, -- Set for border width
+              bo-st: solid, -- Set for border style 
+              bo-cl: #ccd9e9, -- Set for border color 
+              bg-cl: #ffffff, -- Set for background color 
+              bx-sh: none, -- Set for box shadow 
+    -----------------------------------------------------------------------------------------------------------
+  */
+    theme-config-map__form-elements-map:
+    (
+      theme-config-map__form-elements-map__ff-map: Arial,
+      theme-config-map__form-elements-map__label-map: (
+        fw: 400,
+        fs: 12,
+        cl: #7f7f7f,
+      ),
+      theme-config-map__form-elements-map__form-control-map: (
+        fw: 400,
+        fs: 13,
+        cl: #000000,
+        bo-rd: 3,
+        bo-wi: 1,
+        bo-st: solid,
+        bo-cl: #ccd9e9,
+        bg-cl: #ffffff,
+        bx-sh: none,
+      ),
+    ),
+  /** 
+    -----------------------------------------------------------------------------------------------------------
+      7.  Bootstrap Badge component configuration
+    -----------------------------------------------------------------------------------------------------------
+  */
+    theme-config-map__badge-map:
+    (
+      class-prifix: badge-,
+      ff-map: (
+        ff: Arial,
+        fs: 14,
+      ),
+      color-value-group: (
+        gp1: (
+          txt-cl: #00a9e0,
+          bg-cl: #00a9e0,
+        ),
+        gp2: (
+          txt-cl: #8ec351,
+          bg-cl: #8ec351,
+        ),
+        gp3: (
+          txt-cl: #ff7043,
+          bg-cl: #ff7043,
+        ),
+      ),
+    )
+);
+
+$theme-config: (
+  theme-config__class-name-config: map-deep-get($theme-config-map, theme-config-map__class-name-map),
+  theme-config__color-palette-config: map-deep-get($theme-config-map, theme-config-map__color-palette-map),
+  theme-config__font-config__font-family-config:
+    map-deep-get($theme-config-map, theme-config-map__font-map, theme-config-map__font-map__font-family-map),
+  theme-config__font-config__font-size-config:
+    map-deep-get($theme-config-map, theme-config-map__font-map, theme-config-map__font-map__font-size-map),
+  theme-config__spacing-config: map-deep-get($theme-config-map, theme-config-map__spacing-map),
+  theme-config__button-config: map-deep-get($theme-config-map, theme-config-map__button-map),
+  theme-config__icon-font-config: map-deep-get($theme-config-map, theme-config-map__icon-font-map),
+  theme-config__form-elements: map-deep-get($theme-config-map, theme-config-map__form-elements-map),
+  theme-config-map__badge-config: map-deep-get($theme-config-map, theme-config-map__badge-map),
+);

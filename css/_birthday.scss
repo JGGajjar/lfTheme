@@ -1,0 +1,131 @@
+.birthday-sec{
+
+    display: table;
+    padding: 20px;
+    background: url(../images/happy-birthday-bg.jpg) left top repeat;
+    width: 100%;
+    @include border-radius(3px);
+
+    .birthday__col{
+    
+        display: table-cell;
+        vertical-align: middle;
+
+        &.birthday__icon-text{
+
+            width: 275px;
+
+        } /* birthday__icon end */
+
+        &.birthday__btn{
+            
+            width: 64px;
+
+        } /* birthday__btn end */
+
+    } /* birthday__col end */
+
+    .birthday__users{
+
+        uL{
+            border: 0;
+            padding: 0;
+            float: left;
+            width: 100%;
+            position: relative;
+            margin: 0;
+            list-style: none;
+
+            li{
+
+                float: left;
+                margin: 0;
+                
+
+                img{
+
+                    width: 64px;
+                    height: 64px;
+                    overflow: hidden;
+                    @include border-radius(50%);
+                    margin-right: 15px;
+                    @include box-shadow(0px 3px 7px 0 rgba(get-cl(tc-1), 0.1));
+        
+                } /* img end */
+
+            } /* li end */
+
+        } /* ul end */
+        
+
+    } /* birthday__users end */
+
+    .birthday__anchor-link{
+
+        width: 64px;
+        height: 64px;
+        @include box-shadow(0px 3px 7px 0 rgba(get-cl(tc-1), 0.1));
+        color : get-cl(pc-1);
+        background: get-cl(tc-6);
+        text-align: center;
+        line-height: 64px;
+        display: block;
+        @include border-radius(50%);
+
+        &:hover{
+
+            color : get-cl(tc-6);
+            background: get-cl(pc-1);
+
+        }
+
+    } /* birthday__anchor-link end */
+
+} /* birthday-sec end */
+
+
+/*------------------------------------------
+    Mobile
+--------------------------------------------*/
+@media (max-width: 767px){
+
+    .birthday-sec{
+
+        .birthday__col{
+
+            display: block;
+
+            &.birthday__icon-text{
+
+                width: 100%;
+                display: block;
+                overflow: auto;
+                margin-bottom: 20px;
+
+                .fs-13-ff-op-rg{
+                    font-size: get-fs(fs-12);
+                }
+
+            } /* birthday__icon-text end */
+
+            &.birthday__users{
+
+                display: block;
+                width: calc(100% - 64px);
+                clear: both;
+                float: left;
+
+            } /* birthday__users end */
+
+            &.birthday__btn{
+
+                float: right;
+
+            } /* birthday__btn end */
+
+
+        } /* birthday__col end */
+
+    } /* birthday-sec end */    
+
+}

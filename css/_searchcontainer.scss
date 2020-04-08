@@ -1,0 +1,195 @@
+.searchcontainer-content{
+
+    .table{
+
+        margin-bottom: 10px;
+
+        &.table-striped{
+
+            > tbody.table-data > tr:nth-of-type(even),
+            > tbody > tr:nth-of-type(even)
+            {
+    
+                background: transparent;
+    
+            }
+    
+        } /* &.table-striped end */
+
+        &.table-bordered{
+
+            > thead.table-columns > tr > td,
+            > thead.table-columns > tr > th,
+            > tbody.table-data > tr > td,
+            > tbody.table-data > tr > th,
+            > tfoot.table-foot > tr > td,
+            > tfoot.table-foot > tr > th,
+            > thead > tr > td,
+            > thead > tr > th,
+            > tbody > tr > td,
+            > tbody > tr > th,
+            > tfoot > tr > td,
+            > tfoot > tr > th
+            {
+                border: 0;
+            }
+    
+        } /* &.table-bordered end */
+
+        &.table-hover{
+
+            > tbody.table-data > tr:hover,
+            > tbody > tr:hover
+            {
+                background: get-cl(tc-5);
+            }
+    
+        }
+
+        .lfr-icon-menu{
+
+            .icon-monospaced {
+
+                height: 16px;
+                line-height: 16px;
+                color: get-cl(tc-2);
+
+                .lexicon-icon {
+
+                    height: 16px;
+                    line-height: 16px;
+                    padding: 0;
+
+                } /* lexicon-icon end */
+
+            } /* icon-monospaced end */
+
+        } /* lfr-icon-menu end */
+
+    } /* table end */
+
+    .table-autofit > thead > tr > th,
+    .table-autofit > thead > tr > td,
+    .table-autofit > tbody > tr > th,
+    .table-autofit > tbody > tr > td {
+
+        width: auto;
+		vertical-align: top;
+        
+    } /* .table-autofit end */
+	.contact-table{
+		.lfr-profile-column{
+			width: 30px !important;
+			min-width: 30px;
+			.sticker-lg {
+				width: 28px;
+				height: 27px;
+				box-shadow: 0px 5px 5px 0 rgba(0, 0, 0, 0.1);
+			}
+		}
+		.desig-Clr span{
+			@extend .cl-tc-2;
+		}
+	}
+	.lfr-name-column {
+		min-width: 65px !important;
+		.sticker-lg {
+			height: 80px;
+			width: 80px;
+		}
+	}
+    .lfr-entry-action-column {
+		span{
+
+			/*width: 60px !important;*/
+			color: get-cl(pc-1);
+			font-weight: bold;
+			font-size: get-fs(fs-14);
+		}
+    } /* lfr-entry-action-column end */
+	.name-width{
+		min-width: 170px;
+	}
+    .taglib-search-iterator-page-iterator-bottom{
+
+        .pagination-bar{
+
+            color: get-cl(tc-2);
+
+            .dropdown{
+
+                a{
+
+                    color: get-cl(tc-2);
+                    text-decoration: none;
+
+                    &:hover, &:focus{
+
+                        color: get-cl(pc-4)
+
+                    } 
+
+                } /* a end */
+
+            }/* .dropdown end */
+
+            .pagination-results{
+
+
+
+            } /* .pagination-results end */
+
+            .pagination{
+
+                li {
+
+                    margin-left: 5px;
+                    display: inline-block;
+                    
+                    a{
+
+                        color: get-cl(tc-2);
+                        text-decoration: none;
+                        border: none;
+                        @include border-radius(3px);
+
+                        &:hover, &:focus{
+
+                            color: get-cl(tc-1);
+                            background: get-cl(tc-5);
+
+                        } 
+
+                    } /* a end */
+
+                    &.active{
+
+                        a{
+                            color: get-cl(tc-1);
+                            background: get-cl(tc-4);
+
+                        } /* a end */
+
+                    } /* &.active end */
+
+                    &.disabled{
+
+                        a{
+                            
+                            @include opacity(0.5);
+                            cursor: auto;
+                            pointer-events: none;
+                            
+                        } /* a end */
+                        
+                    } /* .disabled end */
+
+                } /* li end */
+
+            } /* pagination end */
+
+        } /* .pagination-bar end */
+
+    } /* .taglib-search-iterator-page-iterator-bottom end */
+
+} /* searchcontainer-content end */

@@ -1,0 +1,378 @@
+/*--------------------------------
+	All side border-radius Mixins 
+----------------------------------*/
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+
+  -webkit-border-radius: $radius;
+
+  -moz-border-radius: $radius;
+
+  -o-border-radius: $radius;
+}
+
+/*--------------------------------
+	Represents a body level
+----------------------------------*/
+
+@mixin _pm-body-level($config) {
+  font-family: map-get($config, default-ff);
+
+  font-size: map-get($config, default-fs);
+
+  color: map-get($config, default-fc);
+
+  background: map-get($config, default-bc);
+}
+
+/*--------------------------------------------------
+	Represents baground and font color class level
+----------------------------------------------------*/
+
+@mixin _pm-bg-cl-level($config) {
+  @each $key, $value in $config {
+    .bg-#{$key} {
+      background: #{$value};
+    }
+
+    .cl-#{$key} {
+      color: #{$value};
+    }
+  }
+}
+
+/*--------------------------------
+	Represents a font size 
+----------------------------------*/
+
+@mixin _pm-font-size-level($config) {
+  @each $key, $value in $config {
+    .#{$key} {
+      font-size: #{$value}#{px};
+    }
+  }
+}
+
+/*----------------------------------------------
+	Represents a Heading & Paragraph font size 
+------------------------------------------------*/
+$sort-css-prop: (
+  fs: font-size,
+  ff: font-family,
+  fw: font-weight,
+  cl: color,
+  bo-rd: border-radius,
+  bo-wi: border-width,
+  bo-st: border-style,
+  bo-cl: border-color,
+  bx-sh: box-shadow,
+  bg-cl: background-color,
+  tt: (
+    text-transform: (
+      u: uppercase,
+      c: capitalize,
+      l: lowercase,
+      n: none,
+    ),
+  ),
+  td: (
+    text-decoration: (
+      n: none,
+      u: underline,
+    ),
+  ),
+  wd: width,
+  hi: height,
+  mg-t: margin-top,
+  mg-r: margin-right,
+  mg-b: margin-bottom,
+  mg-l: margin-left,
+  ds: display,
+);
+
+@mixin _pm-heading-para-link-font-size-level($config) {
+  $class-or-tag: null;
+
+  @each $key, $values in $config {
+    @if $key ==
+      h1 or
+      $key ==
+      h2 or
+      $key ==
+      h3 or
+      $key ==
+      h4 or
+      $key ==
+      h5 or
+      $key ==
+      h6 or
+      $key ==
+      p or
+      $key ==
+      a or
+      $key ==
+      "a:hover" or
+      $key ==
+      "a:focus"
+    {
+      $class-or-tag: $key;
+    } @else {
+      $class-or-tag: ".#{$key}";
+    }
+
+    #{$class-or-tag} {
+      @each $key, $value in $values {
+        @if $key == "tt" {
+          text-transform: #{map-deep-get(map-get($sort-css-prop, $key), text-transform, $value)};
+        } @else if $key == "td" {
+          text-decoration: #{map-deep-get(map-get($sort-css-prop, $key), text-decoration, $value)};
+        } @else {
+          #{map-get($sort-css-prop,$key)}: $value;
+        }
+      }
+    }
+  }
+}
+
+/*--------------------------------
+	Represents a spacing 
+----------------------------------*/
+
+@mixin _pm-spacing-level($spacing-min, $spacing-max, $spacing-dif, $prifix, $style, $prifix-direction) {
+  $i: $spacing-min;
+
+  @while $i <= $spacing-max {
+    @each $value in $prifix-direction {
+      @if ($value == all) {
+        .#{$prifix}#{sp-}#{$i} {
+          #{$style}: $i#{px};
+        }
+      } @else {
+        .#{$prifix}#{$value}-sp-#{$i} {
+          #{$style}-#{$value}: $i#{px};
+        }
+      }
+    }
+
+    $i: $i + $spacing-dif;
+  }
+}
+
+@mixin _pm-margin-padding-level($config) {
+  $spacing-min: map-get($config, spcing-min);
+  $spcing-max: map-get($config, spcing-max);
+  $spacing-dif: map-get($config, spacing-dif);
+  $class-direction: map-get($config, class-direction);
+  $class-prefix: map-get($config, class-prefix);
+
+  @each $style, $prifix in $class-prefix {
+    @include _pm-spacing-level($spacing-min, $spcing-max, $spacing-dif, $prifix, $style, $class-direction);
+  }
+}
+
+/*--------------------------------
+	Represents a Button 
+----------------------------------*/
+@mixin _pm-button-cl-level($config) {
+  @each $button-category-key, $values in $config {
+    $button-category: $button-category-key;
+    $class-name: map-deep-get($config, $button-category, class-prifix);
+    $class-value-group: map-deep-get($config, $button-category, color-value-group);
+    $index-value: 1;
+
+    @each $class-value-group-key, $class-value-group-value in $class-value-group {
+      @each $class-group-key, $class-group-value in $class-value-group-value {
+        @if ($class-group-key == normal-state) {
+          .#{$class-name#{$index-value}} {
+            color: map-deep-get(
+              $config,
+              $button-category,
+              color-value-group,
+              $class-value-group-key,
+              $class-group-key,
+              txt-cl
+            );
+            background: map-deep-get(
+              $config,
+              $button-category,
+              color-value-group,
+              $class-value-group-key,
+              $class-group-key,
+              bg-cl
+            );
+            border-color: map-deep-get(
+              $config,
+              $button-category,
+              color-value-group,
+              $class-value-group-key,
+              $class-group-key,
+              br-cl
+            );
+          }
+        }
+
+        @if ($class-group-key == hover-state) {
+          .#{$class-name#{$index-value}}:focus,
+          .#{$class-name#{$index-value}}:hover {
+            color: map-deep-get(
+              $config,
+              $button-category,
+              color-value-group,
+              $class-value-group-key,
+              $class-group-key,
+              txt-cl
+            );
+            background: map-deep-get(
+              $config,
+              $button-category,
+              color-value-group,
+              $class-value-group-key,
+              $class-group-key,
+              bg-cl
+            );
+            border-color: map-deep-get(
+              $config,
+              $button-category,
+              color-value-group,
+              $class-value-group-key,
+              $class-group-key,
+              br-cl
+            );
+          }
+        }
+
+        @if ($class-group-key == disable-state) {
+          .#{$class-name#{$index-value}}.disabled,
+          .#{$class-name#{$index-value}}.disabled:hover,
+          .#{$class-name#{$index-value}}.disabled:focus,
+          .#{$class-name#{$index-value}}.disabled.focus,
+          .#{$class-name#{$index-value}}[disabled],
+          .#{$class-name#{$index-value}}[disabled]:hover,
+          .#{$class-name#{$index-value}}[disabled]:focus,
+          .#{$class-name#{$index-value}}[disabled].focus,
+          fieldset[disabled] .#{$class-name#{$index-value}},
+          fieldset[disabled] .#{$class-name#{$index-value}}:hover,
+          fieldset[disabled] .#{$class-name#{$index-value}}:focus,
+          fieldset[disabled] .#{$class-name#{$index-value}}.focus {
+            color: map-deep-get(
+              $config,
+              $button-category,
+              color-value-group,
+              $class-value-group-key,
+              $class-group-key,
+              txt-cl
+            );
+            background: map-deep-get(
+              $config,
+              $button-category,
+              color-value-group,
+              $class-value-group-key,
+              $class-group-key,
+              bg-cl
+            );
+            border-color: map-deep-get(
+              $config,
+              $button-category,
+              color-value-group,
+              $class-value-group-key,
+              $class-group-key,
+              br-cl
+            );
+          }
+        }
+      }
+
+      $index-value: $index-value + 1;
+    }
+  }
+}
+
+/*--------------------------------
+	Represents a Icon Font 
+----------------------------------*/
+@mixin _pm-icon-font-level($config) {
+  @each $key, $value in $config {
+    .#{$key}:before {
+      content: get-if-unicode($value);
+    }
+  }
+}
+
+/*--------------------------------
+	Represents a From label 
+----------------------------------*/
+@mixin _pm-form-label-level($config, $ff) {
+  %cu-label {
+    font-family: $ff;
+
+    @each $key, $value in $config {
+      @if ($key == "fs") {
+        $value: unquote($value + "px");
+      }
+
+      #{map-get($sort-css-prop,$key)}: $value;
+    }
+  }
+}
+
+/*--------------------------------
+	Represents a From control 
+----------------------------------*/
+@mixin _pm-form-control-level($config, $ff) {
+  %cu-form-control {
+    font-family: $ff;
+
+    @each $key, $value in $config {
+      @if ($key == fs or $key == bo-wi) {
+        $value: get-px($value);
+      }
+
+      @if ($key == "bo-rd") {
+        @include border-radius(get-px($value));
+      } @else if($key == "bx-sh") {
+        @include box-shadow($value);
+      } @else {
+        #{map-get($sort-css-prop,$key)}: $value;
+      }
+    }
+  }
+}
+
+/*--------------------------------
+	Represents a From label 
+----------------------------------*/
+@mixin _pm-badge-cl-level($config) {
+  //@each $badge-category-key, $values in $config{
+
+  $class-name: map-deep-get($config, class-prifix);
+  $class-value-group: map-deep-get($config, color-value-group);
+  $ff: map-deep-get($config, ff-map);
+  $legend: map-deep-get($config, legend-map);
+  $index-value: 1;
+
+  @each $class-value-group-key, $class-value-group-value in $class-value-group {
+    .#{$class-name#{$index-value}} {
+      @each $key, $value in $ff {
+        @if ($key == ff) {
+          font-family: $value;
+        }
+
+        @if ($key == fs) {
+          font-size: unquote($value + "px");
+        }
+      }
+
+      color: map-deep-get($config, color-value-group, $class-value-group-key, txt-cl);
+    }
+
+    .#{$class-name#{$index-value}}:before {
+      content: "";
+      background: map-deep-get($config, color-value-group, $class-value-group-key, bg-cl);
+    }
+
+    $index-value: $index-value + 1;
+  }
+
+  //}
+}

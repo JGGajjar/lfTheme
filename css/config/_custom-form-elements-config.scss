@@ -1,0 +1,7 @@
+/*--------------------------------------------------
+    Button config
+----------------------------------------------------*/
+$form-elements-config: get-component-config(theme-config__form-elements);
+$form-elements-config__ff-config: map-deep-get($form-elements-config, theme-config-map__form-elements-map__ff-map);
+$form-elements-config__label-config: map-deep-get($form-elements-config, theme-config-map__form-elements-map__label-map);
+$form-elements-config__form-control-config: map-deep-get($form-elements-config, theme-config-map__form-elements-map__form-control-map);

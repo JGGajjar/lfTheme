@@ -1,0 +1,159 @@
+/*--------------------------------------------------
+    Typograph  Map and Configuration
+----------------------------------------------------*/
+
+/* Font Family */
+$font-family-config: get-component-config(theme-config__font-config__font-family-config);
+
+
+/* Font Size  */
+$font-size-config: get-component-config(theme-config__font-config__font-size-config);
+
+
+/*
+ * font-map-genrator O/P
+ * fs-8: 8, fs-9: 9, fs-10: 10, fs-11: 11, fs-12: 12, fs-13: 13, 
+ * fs-14: 14, fs-15: 15, fs-16: 16, fs-17: 17, fs-18: 18, fs-19: 19, 
+ * fs-20: 20, fs-21: 21, fs-22: 22, fs-23: 23, fs-24: 24, fs-25: 25, 
+ * fs-26: 26, fs-27: 27, fs-28: 28, fs-29: 29, fs-30: 30
+ */
+ 
+$font-size-config: font-map-genrator($font-size-config);
+
+$heading-para-link-font-config:(
+	h1:(
+		fs: map-get($font-size-config, fs-15)+"px",
+		ff: map-get($font-family-config, ff-opensans-bold),
+		tt: 'c'
+	),
+	h2:(
+		fs: map-get($font-size-config, fs-15)+"px",
+		ff: map-get($font-family-config, ff-opensans-light),
+		tt: 'c'
+	),
+	h3:(
+		fs: map-get($font-size-config, fs-14)+"px",
+		ff: map-get($font-family-config, ff-opensans-regular),
+		tt: 'c'
+	),
+	h4:(
+		fs: map-get($font-size-config, fs-13)+"px",
+		ff: map-get($font-family-config, ff-opensans-regular),
+		tt: 'c'
+	),
+	h5:(
+		fs: map-get($font-size-config, fs-12)+"px",
+		ff: map-get($font-family-config, ff-opensans-regular),
+		tt: 'c'
+	),
+	h6:(
+		fs: map-get($font-size-config, fs-11)+"px",
+		ff: map-get($font-family-config, ff-opensans-regular),
+		tt: 'c'
+	),
+	p:(
+		fs: map-get($font-size-config, fs-13)+"px",
+		ff: map-get($font-family-config, ff-opensans-regular),
+		tt: 'n'
+	),
+	a:(
+		fs: map-get($font-size-config, fs-13)+"px",
+		ff: map-get($font-family-config, ff-opensans-regular),
+		cl: map-get($color-palette-config, pc-4),
+		tt: 'n',
+		td: 'n'
+	),
+	'a:hover':(
+		cl: map-get($color-palette-config, pc-4),
+		td: 'u'
+	),
+	'a:focus':(
+		cl: map-get($color-palette-config, pc-4),
+		td: 'u'
+	),
+	fs-8:(
+		fs: map-get($font-size-config, fs-8)+"px",
+		tt: 'n'
+	),
+	fs-11-ff-ar:(
+		fs: map-get($font-size-config, fs-11)+"px",
+		ff: map-get($font-family-config, ff-arial),
+		tt: 'n'
+	),
+	fs-11-ff-op-rg:(
+		fs: map-get($font-size-config, fs-11)+"px",
+		ff: map-get($font-family-config, ff-opensans-regular),
+		tt: 'n'
+	),
+	fs-12-ff-ar:(
+		fs: map-get($font-size-config, fs-12)+"px",
+		ff: map-get($font-family-config, ff-arial),
+		tt: 'n'
+	),
+	fs-12-ff-op-rg:(
+		fs: map-get($font-size-config, fs-12)+"px",
+		ff: map-get($font-family-config, ff-opensans-regular),
+		tt: 'c'
+	),
+	fs-13-ff-ar:(
+		fs: map-get($font-size-config, fs-13)+"px",
+		ff: map-get($font-family-config, ff-arial),
+		tt: 'n'
+	),
+	fs-13-ff-op-rg:(
+		fs: map-get($font-size-config, fs-13)+"px",
+		ff: map-get($font-family-config, ff-opensans-regular),
+		tt: 'c'
+	),
+	fs-13-ff-op-bo-n:(
+		fs: map-get($font-size-config, fs-13)+"px",
+		ff: map-get($font-family-config, ff-opensans-bold),
+		tt: 'n'
+	),
+	fs-14-ff-ar:(
+		fs: map-get($font-size-config, fs-14)+"px",
+		ff: map-get($font-family-config, ff-arial),
+		tt: 'n'
+	),
+	fs-14-ff-op-rg:(
+		fs: map-get($font-size-config, fs-14)+"px",
+		ff: map-get($font-family-config, ff-opensans-regular),
+		tt: 'n'
+	),
+	fs-14-ff-op-bo:(
+		fs: map-get($font-size-config, fs-14)+"px",
+		ff: map-get($font-family-config, ff-opensans-bold),
+		tt: 'n'
+	),
+	fs-15-ff-op-bo:(
+		fs: map-get($font-size-config, fs-15)+"px",
+		ff: map-get($font-family-config, ff-opensans-bold),
+		tt: 'n'
+	),
+	fs-20-ff-op-li:(
+		fs: map-get($font-size-config, fs-20)+"px",
+		ff: map-get($font-family-config, ff-opensans-light),
+		tt: 'n'
+	),
+	fs-21-ff-op-rg:(
+		fs: map-get($font-size-config, fs-21)+"px",
+		ff: map-get($font-family-config, ff-opensans-regular),
+		tt: 'n'
+	),
+	fs-22-ff-op-bo:(
+		fs: map-get($font-size-config, fs-22)+"px",
+		ff: map-get($font-family-config, ff-opensans-bold),
+		tt: 'u'
+	),
+	fs-22-ff-op-bo-n:(
+		fs: map-get($font-size-config, fs-22)+"px",
+		ff: map-get($font-family-config, ff-opensans-bold),
+		tt: 'n'
+	),
+	fs-22-ff-op-li:(
+		fs: map-get($font-size-config, fs-22)+"px",
+		ff: map-get($font-family-config, ff-opensans-light),
+		tt: 'u'
+	)
+
+);

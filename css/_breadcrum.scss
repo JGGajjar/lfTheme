@@ -1,0 +1,51 @@
+.breadcrumb-section{
+    text-align: right;
+
+    .breadcrumb {
+        display:inline-block;
+        background-color: transparent;
+        padding:0;
+        text-align: right;
+        margin: 0;
+
+        li{
+            margin-right: 5px;
+            color : get-cl(tc-3);
+
+            a.active, a.selected, &:last-child a {
+                color : get-cl(tc-3);
+            }
+
+            a{
+                font-size: get-fs(fs-12);
+                text-decoration:none !important;
+                color : get-cl(pc-1);
+
+                &:hover, &:focus{
+                    color : get-cl(sc-1);
+                }
+
+                
+            }
+
+            + li{
+                padding-left: 13px;
+                
+                &:before{
+                    height: 15px;
+                    top: 7px;
+                    width: .65em;
+                    background: no-repeat;
+                    content: '/';
+                    text-align: center;
+                    color : get-cl(tc-3);
+                }
+            }
+
+            &:last-child{
+                margin-right: 0;
+            }
+        }
+    }
+
+}

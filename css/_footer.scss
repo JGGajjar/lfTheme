@@ -1,0 +1,94 @@
+.footer-sec{
+	@include box-shadow(0px -5px 5px 0 rgba(get-cl(sc-5), 0.5));
+	padding: 11px 0;
+	
+	.footer-sec__links{
+		list-style: none;
+		margin: 8px 0;
+		padding: 0;
+		@extend .clearfix;
+		
+		> li{
+			
+			padding: 0 10px;
+			margin: 5px 0;
+			border-right: 1px solid get-cl(pc-1);
+			
+			&:first-child{
+				padding-left: 0;
+			}
+			
+			&:last-child{
+				padding-right: 0;
+				border-right: 0 none;
+			}
+			
+			> a, > a:hover, > a:focus{
+				color: get-cl(pc-1);
+			}/* > a, > a:hover, > a:focus End */
+			
+		}/* > li End */
+		
+		> li, > li > a{
+			float: left;
+		}/* > li, > li > a End */
+		
+	}/* .footer-sec__links End */
+	
+	.footer-sec__text{
+		text-align: right;
+		*{
+			@extend .fs-11-ff-ar;
+			color: get-cl(tc-1);
+			vertical-align: middle;
+		}
+	}/* .footer-sec__text End */
+	
+}/* .footer-sec End */
+
+/*------------------------------------------
+    Mobile portrait
+--------------------------------------------*/
+
+@media (max-width: 350px){
+	
+	.footer-sec{
+		
+		.footer-sec__links > li:last-child{
+			padding-left: 0;
+		}/* .footer-sec__links > li:last-child End */
+		
+	}/* .footer-sec End */
+	
+}/* @media (max-width: 350px) End */
+
+/*------------------------------------------
+    Mobile portrait and landscape
+--------------------------------------------*/
+
+@media (max-width: 767px){
+	
+	.footer-sec{
+		
+		.footer-sec__text{
+			text-align: left;
+		}/* .footer-sec__text End */
+		
+	}/* .footer-sec End */
+	
+}/* @media (max-width: 767px) End */
+
+/*------------------------------------------
+    Tablet portrait Mode
+--------------------------------------------*/
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+	
+	.footer-sec{
+		
+		.footer-sec__links > li > a{
+			font-size: get-fs(fs-11);
+		}/* .footer-sec__links > li > a End */
+		
+	}/* .footer-sec End */
+	
+}/* @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) End */

@@ -1,0 +1,152 @@
+.panel-sec{
+	@include box-shadow(0px 3px 7px 0 rgba(get-cl(tc-1), 0.05));
+    @extend .bg-tc-6;
+    @include border-radius(3px);
+    @extend .mg-bottom-sp-0;
+    border-color: get-cl(sc-5);
+    
+    .panel-heading{
+    	@extend .bg-tc-6;
+    	border-color: get-cl(sc-5);
+    	padding: 12px 20px;
+    	
+    	h2{
+    		@extend .cl-pc-1;
+    		position: relative;
+			
+			.icon, i{
+    			position: absolute;
+    			right: 0;
+    			top: 0;
+    			font-size: get-fs(fs-16);
+    			@extend .mg-left-sp-10;
+			}/* + i, + .icon End */
+
+			
+			
+    	}/* h2 End */
+    	
+    	.icon, i{
+    		float: right;
+			@extend .cl-pc-1;
+			text-decoration: none;
+		}/* .icon End */
+		
+		&.icon-left{
+
+			h2 i, h2 .icon, h1 i, h1 .icon{
+
+				position: relative;
+				left: 0;
+				top: 0;
+				right: inherit;
+				float: left;
+				margin: 0 10px 0 0;
+
+			} /* h2 i, h2 .icon end */
+
+		} /* icon-left end */
+    	
+    	&--media{
+    		
+    		padding: 0;
+		    overflow: hidden;
+		    border-bottom: 4px solid get-cl(sc-1);
+		    
+		    img{
+		    	height: 116px;
+		    }/* img End */
+    		
+		}/* &--media End */		
+    	
+    }/* .panel-heading End */
+    
+    .panel-sec__ft-body{
+    	
+    	@extend .pd-top-sp-15;
+    	@extend .pd-bottom-sp-15;
+    	@extend .pd-left-sp-20;
+    	@extend .pd-right-sp-20;
+    	
+    	p:last-child{
+    		@extend .mg-bottom-sp-0;
+    	}
+    	
+    	&+.panel-sec__ft-link{
+    		padding-top: 0;
+    		.kaicon{
+    			font-size: get-fs(fs-11);
+    			color: get-cl(pc-1);
+    		}/* .kaicon End */
+    	}/* &+.panel-sec__ft-link End */
+    	
+    	> *:not(.row){
+    		margin: 0;
+    		padding: 0;
+    	}/* *:not(.row) End */
+    	
+    	> [class='row']{
+    		margin: 0 -15px;
+    	}/* > [class='row'] End */
+    	
+    }/* .panel-sec__ft-body End */
+    
+    .panel-sec__ft-footer{
+    
+    	@extend .pd-top-sp-0;
+    	@extend .pd-bottom-sp-0;
+    	@extend .pd-left-sp-20;
+    	@extend .pd-right-sp-20;
+    	border-top: 1px solid get-cl(sc-5);
+    	background-color: get-cl(tc-6);
+    	border-color: get-cl(sc-5);
+    	color: inherit;
+    	
+    	[class*="col-"] + [class*="col-"]{
+    		border-left: 1px solid get-cl(sc-5);
+    	} /* [class*="col-"] + [class*="col-"] End */
+    	
+    }/* .panel-sec__ft-footer End */
+    
+    .panel-sec__ft-link{
+    	
+    	@extend .bg-tc-6;
+    	border-top: 0 none;
+    	padding: 18px 20px;
+    	
+    	a, a:hover, a:focus{
+	    	@extend .fs-13-ff-op-rg;
+	    	@extend .cl-pc-1;
+    	}/* a End */
+    	
+    }/* .panel-sec__ft-link End */
+    
+    
+    &.extra-space{
+    	
+    	@extend .pd-left-sp-20;
+   		@extend .pd-right-sp-20;
+    		
+    	.panel-heading{
+    	
+    		@extend .pd-left-sp-0;
+   			@extend .pd-right-sp-0;
+   			padding-top: 18px;
+   			padding-bottom: 18px;
+   			
+   			.panel-title{
+   				
+   				padding: 9px 0 6px;
+   				
+   			}/* .panel-title End */
+   			
+    	}/* .panel-heading End */
+    	
+    	.panel-sec__ft-body{
+    		@extend .pd-left-sp-0;
+   			@extend .pd-right-sp-0;
+    	}/* .panel-sec__ft-body End */
+    	
+    }/* &.extra-space End */
+    
+}/* .panel-sec End */

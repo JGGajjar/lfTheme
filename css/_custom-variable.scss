@@ -1,0 +1,38 @@
+/*--------------------------------------------------
+    Root HTML Level config
+----------------------------------------------------*/
+/* Custom Theme configuration */
+@import "config/custom-theme-config";
+
+/* Custom color configuration */
+@import "config/custom-color-config";
+
+/* Custom font configuration */
+@import "config/custom-font-config";
+
+/* Custom spacing configuration */
+@import "config/custom-spacing-config";
+
+/* Custom button configuration */
+@import "config/custom-button-config";
+
+/* Custom icon font configuration */
+@import "config/custom-icon-font-config";
+
+/* Custom form elements configuration */
+@import "config/custom-form-elements-config";
+
+/* Custom badge configuration */
+@import "config/custom-badge-config";
+
+$custom_html_css_class: get-component-config(theme-config__class-name-config);
+
+/*--------------------------------------------------
+    Body config
+----------------------------------------------------*/
+$_pm-body-cofig-map: (
+  default-ff: map-get($font-family-config, ff-opensans-regular),
+  default-fs: map-get($font-size-config, fs-14) + "px",
+  default-fc: map-get($color-palette-config, tc-1),
+  default-bc: map-get($color-palette-config, tc-6),
+);
