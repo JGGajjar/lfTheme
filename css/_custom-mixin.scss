@@ -1,7 +1,14 @@
 /*--------------------------------
+	Opacity Mixins 
+----------------------------------*/
+@mixin opacity($opacity) {
+  $opacity-ie: ($opacity * 100);  // IE8 filter
+  filter: alpha(opacity=$opacity-ie);
+  opacity: $opacity;
+}
+/*--------------------------------
 	All side border-radius Mixins 
 ----------------------------------*/
-
 @mixin border-radius($radius) {
   border-radius: $radius;
 
